@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var	str = "helloWorld";
+			//方法一，将字符串转化为数组，用数组的方法reverse翻转后，再转化为字符串
+			var reverse1 = str.split("").reverse().join('');
+			
+			//方法二，先将字符串转化为数组a，遍历循环数组a
+			//让数组rs2在每次循环的过程中最后面增加，数组a最后一个删除的元素
+			var a = str.split("");
+			var rs2 = [];
+			while(a.length){
+				rs2.push(a.pop());
+			}
+			var reverse2 = rs2.join("");
+			
+			console.log(reverse1,reverse2)//dlroWolleh;
+		</script>
+		<!--温故知识-->
+		<!--增： arr.unshift();在第一个增加
+			   arr.push（）在最后一个增加-->
+		<!--删： arr.pop()删除最后一个
+			   arr.shift（）删除第一个-->
+	</body>
+</html>

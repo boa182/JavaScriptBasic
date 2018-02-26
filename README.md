@@ -1,6 +1,6 @@
 <h1>一些原生JavaScript的基础算法</h1>
 <h2>不定时更新补充修改，如果有出错，望指导（281189459@qq.com）</h2>
-1.**数组去重**
+
 ```javascript
 	var arr =  ['abc','abcd','sss','2','d','t','2','ss','f','22','d'];
 			var n = [];

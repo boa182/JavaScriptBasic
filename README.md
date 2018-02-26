@@ -41,8 +41,8 @@
 ```
 
 3.**字符串翻转输出**
-###回顾    增： arr.unshift()在第一个增加  ；    arr.push（）在最后一个增加
-###回顾    删：arr.pop()删除最后一个  ；arr.shift（）删除第一个
+<p>回顾    增： arr.unshift()在第一个增加  ；    arr.push（）在最后一个增加</p>
+<p>回顾    删：arr.pop()删除最后一个  ；arr.shift（）删除第一个</p>
 
 ```javascript
 	var	str = "helloWorld";

@@ -1,6 +1,35 @@
-<h1>一些原生JavaScript的基础算法</h1>
+<h1>JavaScript的知识总结以及小案例</h1>
 <h2>不定时更新补充修改，如果有出错，望指导（281189459@qq.com）</h2>
 
+<h3>数组：一系列数据的集合</h3>
+一.**创建方式**
+
+```javascript
+	//字面量
+	var arr = [];
+	var arr = [1,2,3];
+	//构造函数创建方式
+	var arr = new Array();
+	var arr = new Array (10,20,30)
+```
+二.**数组的操作**
+1.**数组的访问与写入**
+
+```javascript
+	var arr = ['html5','css3','javascript'];
+	//索引（下标）：从0开始
+	//访问
+	arr[0]; //=> 'html5'
+	arr[2]; //=> 'javascript'
+	
+	//写入
+	arr[3] = 'web前端';
+	console.log(arr[3])//['html5','css3','javascript','web前端']
+```
+
+length:表示数组的长度
+
+<h3>JavaScript基础算法：</h3>
 1.**数组去重**
 
 ```javascript

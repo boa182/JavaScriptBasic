@@ -12,9 +12,17 @@
     var xhr = new XMLHttpRequest();
     //4处理数据
     xhr.onreadystatechange = function(){ 
-    	if(xhr.readyState==4){
+    	if(xhr.readyState==4&&(xhr.status ==200||xhr.status ==304)){
     		var data = xhr.responseText
     		console.log(data);
+    	}
+
+    }
+    //4处理数据的简化版
+    xhr.onload(){
+    	if(xhr.status == 200||xhr.status ==304){
+    		var data = xhr.responseText
+    		console.log(data)
     	}
     }
     //2建立与服务器的连接 
@@ -41,7 +49,6 @@
     //3发送请求 
    
     xhr.send()
-    
 	</script>
 </head>
 

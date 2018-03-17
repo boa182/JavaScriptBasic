@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	<script>
+		
+    //1创建异步请求的对象 
+    var xhr = new XMLHttpRequest();
+    //4处理数据
+    xhr.onreadystatechange = function(){ 
+    	if(xhr.readyState==4){
+    		var data = xhr.responseText
+    		console.log(data);
+    	}
+    }
+    //2建立与服务器的连接 
+    /* 
+			第一个参数：请求类型
+				* get：查
+				* post：改
+				* put：增
+				* delete：删
+			第二个参数：api地址
+				* 数据请求地址（api地址）：http://localhost:1707/api/ajaxtest.php
+				* 打开页面的地址：http://localhost:1707/index.html
+				* 同源（同域，三者一致才能成功发起ajax请求）
+					* 协议
+					* 域名
+					* 端口
+				* 跨域（不同源）
+					ajax请求默认不允许跨域
+			第三个参数：是否异步
+				* 异步：与其他操作同时执行，也叫并发（图片加载，ajax请求）
+				* 同步：做完前一件事情, 才能继续下一件事情（排队）
+	*/ 
+    xhr.open('get','https://cnodejs.org/api/v1/topics',true);
+    //3发送请求 
+   
+    xhr.send()
+    
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

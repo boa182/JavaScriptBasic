@@ -91,3 +91,9 @@ length:表示数组的长度
 	
 	console.log(reverse1,reverse2)//dlroWolleh;
 ```
+
+4.**原生ajax请求**
+- 创建异步请求对象
+- 建立与服务器的连接
+- 向服务器发送请求
+- 处理数据（demo 04）

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				width: 100%;
+				height: 100%;
+				text-align: center;
+			}
+			.head{
+				height: 62px;
+				background: #58bc58;
+			}
+			.nav{
+				height: 48px;
+				background: red;
+			}
+			.contain{
+				background: pink;
+				height: 1120px;
+			}
+			.fixed{
+				position: fixed;
+				top: 0;
+				right: 0;
+				left: 0;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				/*
+				 	吸顶菜单思路
+				 		*window。onscroll
+				 		*用scrollY获取滚动的距离，给nav添加一个类
+				 */
+				window.onscroll = ()=>{
+					var nav = document.querySelector('.nav');
+					
+					if(window.scrollY>=62){
+						
+						nav.classList.add('fixed');
+						
+					}else if(window.scrollY<62){
+						nav.classList.remove('fixed');
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<header class="head">
+			我是头部
+		</header>
+		<nav class="nav">我是菜单，我要吸顶</nav>
+		<main class="contain">我是主要内容，我很长很长的</main>
+	</body>
+</html>

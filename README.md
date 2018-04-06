@@ -98,5 +98,5 @@ length:表示数组的长度
 - 向服务器发送请求
 - 处理数据（demo 04）
 
-5.**吸顶效果**
+5.**吸顶效果** <br />
 <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/05%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html">吸顶demo</a>

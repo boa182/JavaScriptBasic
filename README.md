@@ -146,35 +146,35 @@ length:表示数组的长度
 
 7.**数组求最大，最小值**
 ```javascript
-  const arr = [54,65,43,21,12,66,45,58,97,24]
+const arr = [54,65,43,21,12,66,45,58,97,24]
     
-	// 方法一：数组排序sort
-	let arr1 = arr.slice(0).sort(function(a,b){
-		return a<b;
-	})
-	let arr1Max = arr1[0]
-	let arr1Min = arr1[arr.length-1]
-	
-	// 方法二：扩展运算符+Math.max()
-	//原理：扩展运算符（ spread ）是三个点（...）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。
-	let arr2 = arr.slice(0)
-	let arr2Max = Math.max(...arr2)
-	let arr2Min = Math.min(...arr2)
+// 方法一：数组排序sort
+let arr1 = arr.slice(0).sort(function(a,b){
+	return a<b;
+})
+let arr1Max = arr1[0]
+let arr1Min = arr1[arr.length-1]
+
+// 方法二：扩展运算符+Math.max()
+//原理：扩展运算符（ spread ）是三个点（...）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。
+let arr2 = arr.slice(0)
+let arr2Max = Math.max(...arr2)
+let arr2Min = Math.min(...arr2)
   
-  // 方法三：选择排序(臃肿)
-  let arr3 = arr.slice(0)
-  let leng = arr3.length
-  let arr3Max = null
-  let arr3Min = null
-  for(let i = 0; i<leng ; i++) {
-    for(let j = i+1;j<leng ; j++) {
-      if(arr3[i]<arr3[j]){
-        arr3Max = arr3[j]
-        arr3[j] = arr3[i]
-        arr3[i] = arr3Max
-      }
-    }
-  }
-  arr3Max = arr3[0]
-  arr3Min = arr3[arr3.length-1]
+// 方法三：选择排序(臃肿)
+let arr3 = arr.slice(0)
+let leng = arr3.length
+let arr3Max = null
+let arr3Min = null
+for(let i = 0; i<leng ; i++) {
+	for(let j = i+1;j<leng ; j++) {
+		if(arr3[i]<arr3[j]){
+			arr3Max = arr3[j]
+			arr3[j] = arr3[i]
+			arr3[i] = arr3Max
+		}
+	}
+}
+arr3Max = arr3[0]
+arr3Min = arr3[arr3.length-1]
 ```

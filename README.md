@@ -54,13 +54,13 @@ length:表示数组的长度
 			}
 		}
 	}
-	console.log(n,arr);
 	
 	// 方法三：es6 Set
 	// 原理：集合（Set）对象允许你存储任意类型的唯一值（不能重复），无论它是原始值或者是对象引用。
 	var set = new Set(arr)//{'abc','abcd','sss','2','d','t','ss','f','22','d'}
 	var newArr = Array.from(set)//再把set转变成array
-	// 再简化↓
+	
+	// 利用es6的拓展运算符...可以再简化如下：
 	arr = new Set(arr)
 	arr = [...arr]
 ```

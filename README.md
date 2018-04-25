@@ -37,13 +37,15 @@ length:表示数组的长度
 ```javascript
 	var arr =  ['abc','abcd','sss','2','d','t','2','ss','f','22','d'];
 	var n = [];
-	//方法一：indexOf的方法
+	
+	// 方法一：indexOf的方法
 	for(var i = 0;i<arr.length;i++){
 		if(n.indexOf(arr[i])==-1){
 			n.push(arr[i]);
 		}
 	}
-	//方法二：选择排序
+	
+	// 方法二：选择排序
 	for(var j = 0;j<arr.length;j++){
 		for (var y = j+1;y<arr.length;y++){
 			if(arr[j]==arr[y]){
@@ -53,6 +55,14 @@ length:表示数组的长度
 		}
 	}
 	console.log(n,arr);
+	
+	// 方法三：es6 Set
+	// 原理：集合（Set）对象允许你存储任意类型的唯一值（不能重复），无论它是原始值或者是对象引用。
+	var set = new Set(arr)//{'abc','abcd','sss','2','d','t','ss','f','22','d'}
+	var newArr = Array.from(set)//再把set转变成array
+	// 再简化↓
+	arr = new Set(arr)
+	arr = [...arr]
 ```
 
 2.**数组的深拷贝**

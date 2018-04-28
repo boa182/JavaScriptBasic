@@ -192,61 +192,62 @@ const child2 = [
 ]
 const father = [
  {
-	name:'father1',
-	age: '32',
-	children: [...child1,...child2] //[{},{},{},{}]
+    name:'father1',
+    age: '32',
+    children: [...child1,...child2] //[{},{},{},{}]
  },
  {
-	name:'father2',
-	age: '22',
-	children: [child1,child2]  // [[{},{}],[{},{}]]
+    name:'father2',
+    age: '22',
+    children: [child1,child2]  // [[{},{}],[{},{}]]
  }
 ]
 ```
 - 实际应用：vue的嵌套路由
 - 假设你的代码是这样：
-```
+```javascript
 const router = new Router({
-	routers: [
-		{
-		 path: '/', 
-		 name: home,
-		 component: () => import('components/home.vue'),
-		 children: [{},{},{}......] // 假设你有N多个子路由，然后N多个子路由里面又嵌套N多个子路由，画面太长不忍直视
-		}
-	]
+  routers: [
+	{
+	  path: '/', 
+	  name: home,
+	  component: () => import('components/home.vue'),
+	  children: [{},{},{}......] // 假设你有N多个子路由，然后N多个子路由里面又嵌套N多个子路由，画面太长不忍直视
+	}
+  ]
 })
 ```
 - 改善一下：
 在childRouter.js里面这样：
-```
+```javascript
 export const child1  = [
-	{
-	 path: '/child1',
-	 name: child1,
-	 component: () => import('components/child1.vue'),
-	 children: [{},{},{}...]
-	}
+   {
+      path: '/child1',
+      name: child1,
+      component: () => import('components/child1.vue'),
+      children: [{},{},{}...]
+    }
 ]
 ```
 - 在index.js里面这样：
-```
+```javascript
 import child1 from './module/childRouter.js'
 import child2 from './module/childRouter.js'
 import child3 from './module/childRouter.js'
 
 const router = new Router({
-	routers: [
-	  {
-		 path: '/', 
-		 name: home,
-		 component: () => import('components/home.vue'),
-		 children: [...child1,...child2,...child3] 
+    routers: [
+	{
+	    path: '/', 
+	    name: home,
+	    component: () => import('components/home.vue'),
+	    children: [...child1,...child2,...child3] 
 	  }
 	]
 })
 ```
 - 这样是不是既美观，又方便维护叻？
+<<<<<<< HEAD
 
 9.**剩余运算符的使用**
 ```javascript
@@ -280,3 +281,5 @@ const {name, ...others} = obj;
 console.log(name); // 'zhangsan'  
 console.log(others); // {age: 30, city: 'shenzhen'}
 ```
+=======
+>>>>>>> a4c385266f2dc68a0f298a1f88284ff09b06facb

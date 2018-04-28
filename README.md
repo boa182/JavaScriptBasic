@@ -247,7 +247,6 @@ const router = new Router({
 })
 ```
 - 这样是不是既美观，又方便维护叻？
-<<<<<<< HEAD
 
 9.**剩余运算符的使用**
 ```javascript
@@ -281,5 +280,3 @@ const {name, ...others} = obj;
 console.log(name); // 'zhangsan'  
 console.log(others); // {age: 30, city: 'shenzhen'}
 ```
-=======
->>>>>>> a4c385266f2dc68a0f298a1f88284ff09b06facb

@@ -247,3 +247,36 @@ const router = new Router({
 })
 ```
 - 这样是不是既美观，又方便维护叻？
+
+9.**剩余运算符的使用**
+```javascript
+let a = [1,2,3];
+let [b, ...c] = a;
+b; // 1
+c; // [2,3]
+	
+// 也可以  
+let a = [1,2,3];  
+let [b, ...[c,d,e]] = a;
+b; // 1
+c; // 2  
+d; // 3  
+e; // undefined  
+	
+// 也可以
+function test(a, ...rest){
+	console.log(a); // 1
+	console.log(rest); // [2,3]
+}  
+test(1,2,3)
+
+// 还有类似于
+let array = [1, 2, 3, 4, 5];  
+const { x, y, ...z } = array;  
+// 其中z=[3, 4, 5]，注意如果由于array的length不足以完成析构，则会导致z为[]  
+// 对象
+let obj = { name: 'zhangsan', age: 30, city: 'shenzhen' };  
+const {name, ...others} = obj;  
+console.log(name); // 'zhangsan'  
+console.log(others); // {age: 30, city: 'shenzhen'}
+```

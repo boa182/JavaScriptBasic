@@ -284,14 +284,14 @@ console.log(others); // {age: 30, city: 'shenzhen'}
 10.**Json对象数组按对象属性的排序**
 ```javascript
 const datalist = [
-	{id:2,name:'老二'},
-	{id:1,name:'老大'},
-	{id:5,name:'老幺'},
-	{id:3,name:'老三'},
-	{id:4,name:'老四'}
+   {id:2,name:'老二'},
+   {id:1,name:'老大'},
+   {id:5,name:'老幺'},
+   {id:3,name:'老三'},
+   {id:4,name:'老四'}
 ]
 function sortId(a,b) {
-	return a.id - b.id > 0 // > 0 从小到大排序   < 0 从大到小排序
+   return a.id - b.id > 0 // > 0 从小到大排序   < 0 从大到小排序
 }
 datalist.sort(sortId)
 ```

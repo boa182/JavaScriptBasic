@@ -13,18 +13,19 @@
     //4处理数据
     xhr.onreadystatechange = function(){ 
     	if(xhr.readyState==4&&(xhr.status ==200||xhr.status ==304)){
+			console.log(this)
     		var data = xhr.responseText
     		console.log(data);
     	}
 
     }
     //4处理数据的简化版
-    xhr.onload(){
-    	if(xhr.status == 200||xhr.status ==304){
-    		var data = xhr.responseText
-    		console.log(data)
-    	}
-    }
+    // xhr.onload(){
+    // 	if(xhr.status == 200||xhr.status ==304){
+    // 		var data = xhr.responseText
+    // 		console.log(data)
+    // 	}
+    // }
     //2建立与服务器的连接 
     /* 
 			第一个参数：请求类型

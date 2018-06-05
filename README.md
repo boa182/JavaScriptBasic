@@ -295,3 +295,20 @@ function sortId(a,b) {
 }
 datalist.sort(sortId)
 ```
+
+11.**JS判断值是否是数字**
+- 需求：将从后台请求回来的value，value.toFixed(2)保留小数点后两位
+- 初步实现： 
+```javascript
+	if(value) { // 加这个判断是因为，后端还没返回value时，使用toFixed会报错
+		value.toFixed(2)
+	}
+```
+- 坑来了：我他喵漏了考虑 0 == false 当后端返回是个0的时候，这个就不执行了
+- 改良版: 
+```javascript
+	if (typeof (value) === 'number') {
+		value.toFixed
+	}
+```
+- 延伸想总结一下js判断值是否是数字，详情见11.js判断值是否是数字.html

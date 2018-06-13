@@ -5,6 +5,7 @@
 
 - <a href="#array">何为数组？</a>
 - <a href="#basic">JavaScript基础算法</a>
+- <a href="#function">原生JavaScript实现的功能和demo</a>
 
 <h3 id="array">数组：一系列数据的集合</h3>
 一.**创建方式**
@@ -17,9 +18,9 @@
 	var arr = new Array();
 	var arr = new Array (10,20,30)
 ```
-二.**数组的操作**
+二.**基础操作**
 
-1.**数组的访问与写入**
+1.**访问与写入**
 
 ```javascript
 	var arr = ['html5','css3','javascript'];
@@ -32,8 +33,28 @@
 	arr[3] = 'web前端';
 	console.log(arr[3])//['html5','css3','javascript','web前端']
 ```
+2.**加、删、改**
+- 加
+```javascript
+	arr.unshift() // 在第一个增加
+	arr.push() // 在最后一个加
+```
+- 删
+```javascript
+	arr.shift() // 删除第一个
+	arr.pop() // 删除最后一个
+```
+- 改
+```javascript
+	arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
+	/*
+		eg：减arr.splice(2,1)从索引2开始，删除1个
+				加arr.splice(2,0,1,2,3)从索引2开始，删除0个，多了1,2,3
+				替换arr.splice（3,1,2）先删除再增加
+	*/
+```
 
-length:表示数组的长度
+
 
 <h3 id="basic">JavaScript基础算法：</h3>
 1.**数组去重**
@@ -86,9 +107,6 @@ length:表示数组的长度
 ```
 
 3.**字符串翻转输出**
-<p>回顾    增： arr.unshift()在第一个增加  ；    arr.push（）在最后一个增加</p>
-<p>回顾    删：arr.pop()删除最后一个  ；arr.shift（）删除第一个</p>
-
 ```javascript
 	var	str = "helloWorld";
 	//方法一，将字符串转化为数组，用数组的方法reverse翻转后，再转化为字符串
@@ -105,15 +123,6 @@ length:表示数组的长度
 	
 	console.log(reverse1,reverse2)//dlroWolleh;
 ```
-
-4.**原生ajax请求**
-- 创建异步请求对象
-- 建立与服务器的连接
-- 向服务器发送请求
-- 处理数据（demo 04）
-
-5.**吸顶效果** <br />
-<a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/05%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html">吸顶demo</a>
 
 6.**es7的两个新功能**
 ```javascript
@@ -138,7 +147,6 @@ length:表示数组的长度
 		 console.log(life.includes('mon',10))
 		 // 如果为负数，则被用作偏移
 		 console.log(life.includes('sister',-3))
-		 
 		 
 /*
 	功能二：指数运算符
@@ -316,3 +324,15 @@ datalist.sort(sortId)
 	}
 ```
 - 延伸想总结一下js判断值是否是数字，详情见11.js判断值是否是数字.html
+
+
+<h3 id="function">原生JavaScript实现的功能demo</h3>
+
+1.**吸顶效果** <br />
+<a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/05%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html">吸顶demo</a>
+
+2.**原生ajax请求(demo04)**
+- 创建异步请求对象
+- 建立与服务器的连接
+- 向服务器发送请求
+- 处理数据

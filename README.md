@@ -1,7 +1,8 @@
 <h1>JavaScript的知识总结以及小案例</h1>
 <h2>记得多少写多少 囧</h2>
-
-<h3>数组：一系列数据的集合</h3>
+<a href="#array">何为数组？</a>
+<a href="#basic">JavaScript基础算法</a>
+<h3 id="array">数组：一系列数据的集合</h3>
 
 一.**创建方式**
 
@@ -31,7 +32,7 @@
 
 length:表示数组的长度
 
-<h3>JavaScript基础算法：</h3>
+<h3 id="basic">JavaScript基础算法：</h3>
 1.**数组去重**
 
 ```javascript

@@ -355,4 +355,4 @@ datalist.sort(sortId)
 - <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/04%E5%8E%9F%E7%94%9Fajax%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4.html">原生ajax请求数据渲染列表demo</a> <br />
 
 3.**监听键盘事件响应**
-<a href="http://htmlpreview.github.com/?">会飞的蘑菇头</a>
+- 监听方向键做出响应<a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/12%E4%BC%9A%E9%A3%9E%E7%9A%84%E8%98%91%E8%8F%87%E5%A4%B4.html">会飞的蘑菇头demo</a>

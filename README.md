@@ -331,9 +331,7 @@ datalist.sort(sortId)
 1.**吸顶效果** <br />
 <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/05%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html">吸顶demo</a>
 
-2.**原生ajax请求**
-demo：
-- <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/04%E5%8E%9F%E7%94%9Fajax%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4.html">原生ajax请求数据渲染列表</a>
+2.**原生ajax请求**<br />
 步骤：
 - 创建异步请求对象
 - 建立与服务器的连接
@@ -357,3 +355,4 @@ demo：
 			}
     }
 ```
+- <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/04%E5%8E%9F%E7%94%9Fajax%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4.html">原生ajax请求数据渲染列表demo</a> <br />

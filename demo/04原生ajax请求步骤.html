@@ -32,6 +32,7 @@
 		
     //1创建异步请求的对象 
     var xhr = new XMLHttpRequest();
+
     //4处理数据
     // xhr.onreadystatechange = function(){ 
     // 	if(xhr.readyState==4&&(xhr.status ==200||xhr.status ==304)){
@@ -40,6 +41,7 @@
     // 		console.log(data);
     // 	}
     // }
+		
     //4处理数据的简化版
     xhr.onload = function() {
     	if(xhr.status == 200||xhr.status ==304){

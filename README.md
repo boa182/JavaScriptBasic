@@ -7,7 +7,7 @@
 - <a href="#basic">JavaScript基础算法</a>
 - <a href="#function">原生JavaScript实现的功能和demo</a>
 
-<h3 id="array">数组：一系列数据的集合</h3>
+<h2 id="array">数组：一系列数据的集合</h2>
 一.**创建方式**
 
 ```javascript
@@ -36,27 +36,27 @@
 2.**加、删、改**
 - 加
 ```javascript
-	arr.unshift() // 在第一个增加
-	arr.push() // 在最后一个加
+arr.unshift() // 在第一个增加
+arr.push() // 在最后一个加
 ```
 - 删
 ```javascript
-	arr.shift() // 删除第一个
-	arr.pop() // 删除最后一个
+arr.shift() // 删除第一个
+arr.pop() // 删除最后一个
 ```
 - 改
 ```javascript
-	arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
-	/*
-		eg：减arr.splice(2,1)从索引2开始，删除1个
-				加arr.splice(2,0,1,2,3)从索引2开始，删除0个，多了1,2,3
-				替换arr.splice（3,1,2）先删除再增加
-	*/
+arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
+/*
+ eg：减arr.splice(2,1)从索引2开始，删除1个
+    加arr.splice(2,0,1,2,3)从索引2开始，删除0个，多了1,2,3
+    替换arr.splice（3,1,2）先删除再增加
+*/
 ```
 
 
 
-<h3 id="basic">JavaScript基础算法：</h3>
+<h2 id="basic">JavaScript基础算法：</h2>
 1.**数组去重**
 
 ```javascript
@@ -127,33 +127,32 @@
 4.**es7的两个新功能**
 ```javascript
 //功能一：Array.prototype.includes() 确定一个元素是否在数组中存在，返回布尔值
-		const life = ['mon','dad','brother','sister']
-		console.log(life.includes('mon'))//true
-		console.log(life.includes('boyfirend'))//false
-		/*
-			深入标准：Array.prototype.includes ( searchElement [ , fromIndex ] )
-			1、searchElement —— 要查找的元素。
-				(1)搜索按升序进行
-				    Array(10000000).concat(4).includes(4)  true # [Time] 500 miliseconds 耗时 500ms
- 				    [4].concat(Array(10000000)).includes(4) true # [Time] 90 miliseconds 耗时 90ms
-				(2) 在任何位置找到都会返回 true，否则返回 false
-				(3) 将数组中缺失的元素视为 undefined
-				 [1, , 3].indexOf(undefined) -1
-				 [1, , 3].includes(undefined) true
-		*/
-		
-		 //2、fromIndex （可选的） — 开始查询的起始索引。默认值为0，意味整个数组都会被搜索
-		 //当 fromIndex 大于数组长度时，.includes() 立即返回 false。
-		 console.log(life.includes('mon',10))
-		 // 如果为负数，则被用作偏移
-		 console.log(life.includes('sister',-3))
-		 
+const life = ['mon','dad','brother','sister']
+console.log(life.includes('mon'))//true
+console.log(life.includes('boyfirend'))//false
 /*
-	功能二：指数运算符
-		x ** y (aka Math.pow(x,y))
+	深入标准：Array.prototype.includes ( searchElement [ , fromIndex ] )
+	1、searchElement —— 要查找的元素。
+		(1)搜索按升序进行
+			Array(10000000).concat(4).includes(4)  true # [Time] 500 miliseconds 耗时 500ms
+			[4].concat(Array(10000000)).includes(4) true # [Time] 90 miliseconds 耗时 90ms
+		(2) 在任何位置找到都会返回 true，否则返回 false
+		(3) 将数组中缺失的元素视为 undefined
+			[1, , 3].indexOf(undefined) -1
+			[1, , 3].includes(undefined) true
+	*/
+		
+	//2、fromIndex （可选的） — 开始查询的起始索引。默认值为0，意味整个数组都会被搜索
+	//当 fromIndex 大于数组长度时，.includes() 立即返回 false。
+	console.log(life.includes('mon',10))
+	// 如果为负数，则被用作偏移
+	console.log(life.includes('sister',-3))
+/*
+功能二：指数运算符
+ x ** y (aka Math.pow(x,y))
 */
-		 console.log(2**2,2**3,2**4)
-		 //4 , 8 ,16
+ console.log(2**2,2**3,2**4)
+ //4 , 8 ,16
 ```
 
 5.**数组求最大，最小值**
@@ -204,14 +203,14 @@ const child2 = [
 ]
 const father = [
  {
-    name:'father1',
-    age: '32',
-    children: [...child1,...child2] //[{},{},{},{}]
+	name:'father1',
+	age: '32',
+	children: [...child1,...child2] //[{},{},{},{}]
  },
  {
-    name:'father2',
-    age: '22',
-    children: [child1,child2]  // [[{},{}],[{},{}]]
+	name:'father2',
+	age: '22',
+	children: [child1,child2]  // [[{},{}],[{},{}]]
  }
 ]
 ```
@@ -220,13 +219,12 @@ const father = [
 ```javascript
 const router = new Router({
   routers: [
-	{
-	  path: '/', 
-	  name: home,
-	  component: () => import('components/home.vue'),
-	  children: [{},{},{}......] // 假设你有N多个子路由，然后N多个子路由里面又嵌套N多个子路由，画面太长不忍直视
-	}
-  ]
+  {
+   path: '/', 
+   name: home,
+   component: () => import('components/home.vue'),
+   children: [{},{},{}......] // 假设你有N多个子路由，然后N多个子路由里面又嵌套N多个子路由，画面太长不忍直视
+  }]
 })
 ```
 - 改善一下：
@@ -248,14 +246,13 @@ import child2 from './module/childRouter.js'
 import child3 from './module/childRouter.js'
 
 const router = new Router({
-    routers: [
+  routers: [
 	{
-	    path: '/', 
-	    name: home,
-	    component: () => import('components/home.vue'),
-	    children: [...child1,...child2,...child3] 
-	  }
-	]
+		path: '/', 
+		name: home,
+		component: () => import('components/home.vue'),
+		children: [...child1,...child2,...child3] 
+	}]
 })
 ```
 - 这样是不是既美观，又方便维护叻？
@@ -326,7 +323,7 @@ datalist.sort(sortId)
 - 延伸想总结一下js判断值是否是数字，详情见11.js判断值是否是数字.html
 
 
-<h3 id="function">原生JavaScript实现的功能demo</h3>
+<h2 id="function">原生JavaScript实现的功能demo</h2>
 
 1.**吸顶效果** <br />
 <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/05%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html">吸顶demo</a>
@@ -339,20 +336,20 @@ datalist.sort(sortId)
 - 处理数据
 ```javascript
 //4处理数据
-    xhr.onreadystatechange = function(){ 
-    	if(xhr.readyState==4&&(xhr.status ==200||xhr.status ==304)){
-    		var data = xhr.responseText
-    		console.log(data);
-    	}
-    }
+	xhr.onreadystatechange = function(){ 
+		if(xhr.readyState==4&&(xhr.status ==200||xhr.status ==304)){
+			var data = xhr.responseText
+			console.log(data);
+		}
+	}
 		
-    //4处理数据的简化版
-		// 因为onload是指加载完成之后，readyState为4
-    xhr.onload = function() {
-    	if(xhr.status == 200||xhr.status ==304){
-    		var data = xhr.responseText
-    		console.log(data);
-			}
-    }
+//4处理数据的简化版
+// 因为onload是指加载完成之后，readyState为4
+	xhr.onload = function() {
+		if(xhr.status == 200||xhr.status ==304){
+			var data = xhr.responseText
+			console.log(data);
+		}
+	}
 ```
 - <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/04%E5%8E%9F%E7%94%9Fajax%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4.html">原生ajax请求数据渲染列表demo</a> <br />

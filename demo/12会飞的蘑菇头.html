@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>会飞的蘑菇头</title>
+  <style>
+    body,html{
+      width: 100%;
+      height: 100%;
+    }
+    img{
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+    .left{
+      transform: rotateY(180deg);
+    }
+    .top{
+      transform: rotateZ(-30deg);
+    }
+    .bottom{
+      transform: rotateZ(30deg);
+    }
+  </style>
+</head>
+<body>
+  <img 
+    src="../image/fly.jpg" 
+    width="150px" 
+    height="150px"
+    id="fly">
+<script>
+  var fly = document.getElementById('fly')
+  var left = fly.offsetLeft 
+  var top1 = fly.offsetTop 
+  var speed = 10
+  document.onkeydown = (e) => {
+    if (e.keyCode === 39 && left < window.innerWidth - fly.offsetWidth -20) {
+      left += speed
+      fly.className = ''
+    } else if (e.keyCode === 37 && left > -20) {
+      left -= speed
+      fly.className = 'left'
+    } else if (e.keyCode === 38 && top1 > 9) {
+      top1 -= speed
+      fly.classList = 'top'
+    } else if (e.keyCode === 40) {
+      top1 += speed
+      fly.className = 'bottom'
+    }
+    console.log(left,top1)
+    fly.style.top = top1 + 'px'
+    fly.style.left = left + 'px'
+  }
+
+</script>
+</body>
+</html>

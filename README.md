@@ -124,7 +124,7 @@
 	console.log(reverse1,reverse2)//dlroWolleh;
 ```
 
-6.**es7的两个新功能**
+4.**es7的两个新功能**
 ```javascript
 //功能一：Array.prototype.includes() 确定一个元素是否在数组中存在，返回布尔值
 		const life = ['mon','dad','brother','sister']
@@ -156,7 +156,7 @@
 		 //4 , 8 ,16
 ```
 
-7.**数组求最大，最小值**
+5.**数组求最大，最小值**
 ```javascript
 const arr = [54,65,43,21,12,66,45,58,97,24]
     
@@ -191,7 +191,7 @@ arr3Max = arr3[0]
 arr3Min = arr3[arr3.length-1]
 ```
 
-8.**拓展运算符的使用**
+6.**拓展运算符的使用**
 - 原理：
 ```javascript
 const child1 = [
@@ -260,7 +260,7 @@ const router = new Router({
 ```
 - 这样是不是既美观，又方便维护叻？
 
-9.**剩余运算符的使用**
+7.**剩余运算符的使用**
 ```javascript
 let a = [1,2,3];
 let [b, ...c] = a;
@@ -293,7 +293,7 @@ console.log(name); // 'zhangsan'
 console.log(others); // {age: 30, city: 'shenzhen'}
 ```
 
-10.**Json对象数组按对象属性的排序**
+8.**Json对象数组按对象属性的排序**
 ```javascript
 const datalist = [
    {id:2,name:'老二'},
@@ -308,7 +308,7 @@ function sortId(a,b) {
 datalist.sort(sortId)
 ```
 
-11.**JS判断值是否是数字**
+9.**JS判断值是否是数字**
 - 需求：将从后台请求回来的value，value.toFixed(2)保留小数点后两位
 - 初步实现： 
 ```javascript
@@ -331,8 +331,29 @@ datalist.sort(sortId)
 1.**吸顶效果** <br />
 <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/05%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html">吸顶demo</a>
 
-2.**原生ajax请求(demo04)**
+2.**原生ajax请求**
+demo：
+- <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/04%E5%8E%9F%E7%94%9Fajax%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4.html">原生ajax请求数据渲染列表</a>
+步骤：
 - 创建异步请求对象
 - 建立与服务器的连接
 - 向服务器发送请求
 - 处理数据
+```javascript
+//4处理数据
+    xhr.onreadystatechange = function(){ 
+    	if(xhr.readyState==4&&(xhr.status ==200||xhr.status ==304)){
+    		var data = xhr.responseText
+    		console.log(data);
+    	}
+    }
+		
+    //4处理数据的简化版
+		// 因为onload是指加载完成之后，readyState为4
+    xhr.onload = function() {
+    	if(xhr.status == 200||xhr.status ==304){
+    		var data = xhr.responseText
+    		console.log(data);
+			}
+    }
+```

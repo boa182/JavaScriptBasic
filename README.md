@@ -6,6 +6,7 @@
 - <a href="#array">何为数组？</a>
 - <a href="#basic">JavaScript基础算法</a>
 - <a href="#function">原生JavaScript实现的功能和demo</a>
+- <a href="#date">日期以及常用的日期方法</a>
 
 <h2 id="array">数组：一系列数据的集合</h2>
 一.**创建方式**
@@ -356,3 +357,54 @@ datalist.sort(sortId)
 
 3.**监听键盘事件响应**
 - 监听方向键做出响应<a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/12%E4%BC%9A%E9%A3%9E%E7%9A%84%E8%98%91%E8%8F%87%E5%A4%B4.html">会飞的蘑菇头demo</a>
+
+<h2 id="date">日期Date</h2>
+1.**获取代码执行时的时间（本地时间）**
+```javascript
+var d = new Date()
+```
+
+2.**获取/设置时间**
+```
+获取年月日
+getFullYear()/setFullYear(2014)
+getMonth()/setMonth(8) PS:获取月份是从0开始的
+getDate()/setDate(25)
+
+获取星期
+getDay() 0-6:星期天-星期六
+
+获取时分秒
+getHours()/setHours()
+getMinutes()/setMinutes()
+getSeconds()/setSeconds()
+```
+
+3.**日期处理**
+```
+getTime()/setTime() 获取/修改某个日期自1970年1月1日0时以来的毫秒数
+toLocaleDateString() 以特定地区格式显示年/月/日
+toUTCString() 转换成UTC时间
+```
+
+4.**ES5方法**
+```
+Date.parse()
+Date.now()
+```
+
+5.**延迟与定时器**
+```
+setTimeout(fn,time) 每多少秒执行这一函数
+clearTimeout(timeoutID)：清除指定id标识的延迟操作
+setInterval(fn,30)：每隔30毫秒执行一次fn这个函数,返回一个id标识
+clearInterval(intervalID)：清除指定id标识的定时器操作
+```
+```javascript
+ var timer = setTimeout(function(){
+        //2s后执行这里的代码
+    },2000);
+
+    //清除
+    clearTimeout(timer);
+```

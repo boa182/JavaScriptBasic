@@ -412,4 +412,4 @@ clearInterval(intervalID)：清除指定id标识的定时器操作
 ```
 
 6.**时间demo集合**
-<a href="http://htmlpreview.github.com/?">走动的时间</a>
+- <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/13%E5%8A%A8%E6%80%81%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4.html">走动的时间</a>

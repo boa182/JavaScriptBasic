@@ -359,7 +359,9 @@ datalist.sort(sortId)
 - 监听方向键做出响应<a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/12%E4%BC%9A%E9%A3%9E%E7%9A%84%E8%98%91%E8%8F%87%E5%A4%B4.html">会飞的蘑菇头demo</a>
 
 <h2 id="date">日期Date</h2>
-1.**获取代码执行时的时间（本地时间）**
+
+1.**获取代码执行时的时间(本地时间)**
+
 ```javascript
 var d = new Date()
 ```

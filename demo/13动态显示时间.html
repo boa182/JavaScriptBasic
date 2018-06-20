@@ -8,9 +8,27 @@
 </head>
 <body>
   <h1>当前时间</h1>
+  <div id="time"></div>
   <script>
-    var d = new Date()
-    console.log(d)
+    var time = document.getElementById('time')
+    
+    let showTime = () => {
+      let d = new Date()
+      let year = d.getFullYear()
+      let month = d.getMonth()+1
+      let day = d.getDay()
+
+      let hour = d.getHours()
+      let min = d.getMinutes()
+      let sec = d.getSeconds()
+
+      time.innerHTML = `${year} 年 ${month} 月 ${day} 日
+        ${hour} 时 ${min} 分 ${sec} 秒`
+    }
+    
+    showTime()
+    
+    setInterval(showTime,1000)
   </script>
 </body>
 </html>

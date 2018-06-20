@@ -395,7 +395,7 @@ Date.now()
 
 5.**延迟与定时器**
 ```
-setTimeout(fn,time) 每多少秒执行这一函数
+setTimeout(fn,time) 延迟多少执行
 clearTimeout(timeoutID)：清除指定id标识的延迟操作
 setInterval(fn,30)：每隔30毫秒执行一次fn这个函数,返回一个id标识
 clearInterval(intervalID)：清除指定id标识的定时器操作
@@ -408,3 +408,6 @@ clearInterval(intervalID)：清除指定id标识的定时器操作
     //清除
     clearTimeout(timer);
 ```
+
+6.**时间demo集合**
+<a href="http://htmlpreview.github.com/?">走动的时间</a>

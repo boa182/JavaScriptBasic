@@ -4,9 +4,10 @@
 ### 目录
 
 - <a href="#array">何为数组？</a>
-- <a href="#basic">JavaScript基础算法</a>
-- <a href="#function">原生JavaScript实现的功能和demo</a>
+- <a href="#string">字符串Sting</a>
 - <a href="#date">日期以及常用的日期方法</a>
+- <a href="#basic">JavaScript基础算法</a>
+- <a href="#function">原生JavaScript实现的功能及demo</a>
 
 <h2 id="array">数组：一系列数据的集合</h2>
 一.**创建方式**
@@ -55,7 +56,44 @@ arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
 */
 ```
 
+<h2 id="string">string字符串</h2>
+1.**创建方式**
+```javascript
+let str = ''
+let str2 = new String()
+```
 
+2.**获取方法**
+```javascript
+let str = 'HelloWorld!'
+str[0] //H
+str.charAt(2) // l
+```
+
+3.**判断指定值是否在字符串中存在，或存在的位置**
+```javascript
+str.indexOf() // 返回指定值在字符串对象中首次出现的位置，如果不存在则返回-1
+str.lastIndexOf() // 返回指定值在字符串对象中最后一次出现的位置，如果不存在则返回-1
+str.seach(/reg/i) // 支持正则，不执行全局匹配，忽略g，返回 stringObject 第一个匹配的位置。加i不区分大小写
+```
+
+4.**字符串与数组间的转换**
+```javascript
+split('分隔符') // 根据分隔字符，把字符串拆分成数组
+join('') // 将数组以‘’拼接起来
+```
+
+5.**字符串大小写转换**
+```javascript
+toLowerCase() // 转换成小写
+toUpperCase() // 转换成大写
+```
+
+6.**去除空格**
+```javascript
+str.trim() // 删除前后所有空格，返回新的字符串
+str.replace(/\s/g,'') // 全局匹配删除空格 
+```
 
 <h2 id="basic">JavaScript基础算法：</h2>
 1.**数组去重**

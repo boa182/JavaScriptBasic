@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let str = 'HelloWorld'
+    console.log(1,str[2],str.charAt(0))
+    console.log(2,str.indexOf('l'),str.lastIndexOf('l'),str.search(/LL/i))
+    
+    let arrStr = str.split('')
+    str1 = arrStr.join('-')
+    console.log(arrStr,str1) 
+  </script>
+  
+  <input type="text" id="name" onchange="transform(this.id)" placeholder="转大写英文名">
+  <input type="text" id="content" onchange="transform(this.id)" placeholder="去空格">
+  <script>
+    let transform = (id) => {
+      if (id === 'name') {
+        let Name = document.getElementById(id).value.toUpperCase()
+        document.getElementById(id).value = Name
+      } else if (id === 'content') {
+        let Con = document.getElementById(id).value
+        document.getElementById(id).value = Con.replace(/\s/g,'')
+      }
+    }
+  </script>
+</body>
+</html>

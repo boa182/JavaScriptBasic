@@ -57,7 +57,9 @@ arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
 ```
 
 <h2 id="string">string字符串</h2>
+
 1.**创建方式**
+
 ```javascript
 let str = ''
 let str2 = new String()

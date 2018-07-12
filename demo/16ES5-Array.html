@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    let personList = [
+      {name:'小猪佩奇',level:1},
+      {name:'大猪菊花',level:2},
+      {name:'小脏菊菊',level:2},
+      {name:'小猪佩奇1',level:1},
+      {name:'大猪菊花1',level:9},
+      {name:'小脏菊菊1',level:9}
+    ]
+    personList.forEach((item) => {
+      if (item.level < 2) {
+        item.Word = item.name + '是我们的高级会员'
+      } else {
+        item.Word = item.name + '是我们的普通会员'
+      }
+    })
+    // 过滤掉level 为9的人员
+   personList = personList.filter((item) => {
+     return item.level < 9
+   })
+
+    let str = personList.map((item) => {
+      return `<li>${item.Word}</li>`
+    }).join()
+    let ul = document.createElement('ul')
+    ul.innerHTML = str
+    let box = document.querySelector('.box')
+    box.appendChild(ul)
+    
+  </script>
+</body>
+</html>

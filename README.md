@@ -3,7 +3,8 @@
 
 ### 目录
 
-- <a href="#array">何为数组？</a>
+- <a href="#array">数组的定义及基础操作</a>
+- <a href="#es5Aarray">ES5中新增的Array方法详细说明</a>
 - <a href="#string">字符串Sting</a>
 - <a href="#date">日期以及常用的日期方法</a>
 - <a href="#basic">JavaScript基础算法</a>
@@ -54,6 +55,52 @@ arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
     加arr.splice(2,0,1,2,3)从索引2开始，删除0个，多了1,2,3
     替换arr.splice（3,1,2）先删除再增加
 */
+```
+
+<h2 id="es5Aarray">ES5中新增的Array方法详细说明</h2>
+- forEach 遍历所有元素，for循环没有太大差别，比for循环方便，但是不能随意退出循环。
+```javascript
+let personList = [
+	{name:'小猪佩奇',level:1},
+	{name:'大猪菊花',level:2},
+	{name:'小脏菊菊',level:2},
+	{name:'小猪佩奇1',level:1},
+	{name:'大猪菊花1',level:9},
+	{name:'小脏菊菊1',level:9}
+]
+personList.forEach((item) => {
+	if (item.level < 2) {
+	  item.Word = item.name + '是我们的高级会员'
+	} else {
+	  item.Word = item.name + '是我们的普通会员'
+	}
+})
+```
+
+- map  返回每次函数调用的结果，组成一个数组，返回的是一个数量相等的新数组，返回的内容是什么取决于在fn中返回的值
+```javascript
+// 常用的拼接数据
+let str = personList.map((item) => {
+  return `<li>${item.Word}</li>`
+}).join()
+let ul = document.createElement('ul')
+ul.innerHTML = str
+let box = document.querySelector('.box')
+box.appendChild(ul)
+
+// 一般的数据处理
+let arr = [1,2,3,4,5,6,7,8,9]
+arr.map((item) => {
+	return item*2
+})
+```
+
+- filter 过滤，指数组filter后，返回过滤后的新数组。
+```javascript
+ // 过滤掉level 为9的人员
+personList = personList.filter((item) => {
+	return item.level < 9
+})
 ```
 
 <h2 id="string">string字符串</h2>
@@ -396,7 +443,8 @@ datalist.sort(sortId)
 - <a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/04%E5%8E%9F%E7%94%9Fajax%E8%AF%B7%E6%B1%82%E6%AD%A5%E9%AA%A4.html">原生ajax请求数据渲染列表demo</a> <br />
 
 3.**监听键盘事件响应**
-- 监听方向键做出响应<a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/12%E4%BC%9A%E9%A3%9E%E7%9A%84%E8%98%91%E8%8F%87%E5%A4%B4.html">会飞的蘑菇头demo</a>
+- 监听方向键做出响应 <br />>
+<a href="http://htmlpreview.github.com/?https://github.com/boa182/JavaScriptBasic/blob/master/demo/12%E4%BC%9A%E9%A3%9E%E7%9A%84%E8%98%91%E8%8F%87%E5%A4%B4.html">会飞的蘑菇头demo</a>
 
 <h2 id="date">日期Date</h2>
 

@@ -58,7 +58,8 @@ arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
 ```
 
 <h2 id="es5Aarray">ES5中新增的Array方法详细说明</h2>
-- forEach 遍历所有元素，for循环没有太大差别，比for循环方便，但是不能随意退出循环。
+
+- forEach() 遍历所有元素，for循环没有太大差别，比for循环方便，但是不能随意退出循环。
 
 ```javascript
 let personList = [
@@ -78,7 +79,7 @@ personList.forEach((item) => {
 })
 ```
 
-- map  返回每次函数调用的结果，组成一个数组，返回的是一个数量相等的新数组，返回的内容是什么取决于在fn中返回的值
+- map()  返回每次函数调用的结果，组成一个数组，返回的是一个数量相等的新数组，返回的内容是什么取决于在fn中返回的值
 
 ```javascript
 // 常用的拼接数据
@@ -97,7 +98,7 @@ arr.map((item) => {
 })
 ```
 
-- filter 过滤，指数组filter后，返回过滤后的新数组。
+- filter() 过滤，指数组filter后，返回过滤后的新数组。
 
 ```javascript
  // 过滤掉level 为9的人员

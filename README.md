@@ -414,6 +414,29 @@ datalist.sort(sortId)
 ```
 - 延伸想总结一下js判断值是否是数字，详情见11.js判断值是否是数字.html
 
+10.**多条件判断简洁写法**
+- 我们来看看下面的例子：
+
+```javascript
+function test(fruit) {
+  if (fruit == 'apple' || fruit == 'strawberry') {
+    console.log('red');
+  }
+}
+```
+
+- 乍一看，上面的例子看起来似乎没什么问题。 但是，如果我们还有更多的红色水果呢？比如樱桃（cherry）和蔓越莓（cranberries）。 我们是否要用更多的 || 操作符来扩展该语句呢？
+
+```javascript
+function test(fruit) {
+  // 条件提取到数组中
+  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+ 
+  if (redFruits.includes(fruit)) {
+    console.log('red');
+  }
+```
+
 
 <h2 id="function">原生JavaScript实现的功能demo</h2>
 

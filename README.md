@@ -5,6 +5,10 @@
 
 - <a href="#array">数组的定义及基础操作</a>
 - <a href="#es5Aarray">ES5中新增的Array方法详细说明</a>
+- <a href="#es7">ES7中2个新增的方法</a>
+- <a href="#es8">ES8的新方法</a>
+- <a href="#es9">ES9有使用过的新方法</a>
+- <a href="#es10">ES10的新方法 （我09年2月记笔的时候，部分谷歌，ie不兼容）</a>
 - <a href="#string">字符串Sting</a>
 - <a href="#date">日期以及常用的日期方法</a>
 - <a href="#basic">JavaScript基础算法</a>
@@ -56,6 +60,42 @@ arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
     替换arr.splice（3,1,2）先删除再增加
 */
 ```
+<h2 id="es7">ES7中2个新增的方法</h2>
+1.**includes**
+```javascript
+//功能一：Array.prototype.includes() 确定一个元素是否在数组中存在，返回布尔值
+const life = ['mon','dad','brother','sister']
+console.log(life.includes('mon'))//true
+console.log(life.includes('boyfirend'))//false
+/*
+	深入标准：Array.prototype.includes ( searchElement [ , fromIndex ] )
+	1、searchElement —— 要查找的元素。
+		(1)搜索按升序进行
+			Array(10000000).concat(4).includes(4)  true # [Time] 500 miliseconds 耗时 500ms
+			[4].concat(Array(10000000)).includes(4) true # [Time] 90 miliseconds 耗时 90ms
+		(2) 在任何位置找到都会返回 true，否则返回 false
+		(3) 将数组中缺失的元素视为 undefined
+			[1, , 3].indexOf(undefined) -1
+			[1, , 3].includes(undefined) true
+	*/
+		
+	//2、fromIndex （可选的） — 开始查询的起始索引。默认值为0，意味整个数组都会被搜索
+	//当 fromIndex 大于数组长度时，.includes() 立即返回 false。
+	console.log(life.includes('mon',10))
+	// 如果为负数，则被用作偏移
+	console.log(life.includes('sister',-3))
+/*
+```
+
+2.**功能二：指数运算符**
+```javascript
+/*
+ 	x ** y (aka Math.pow(x,y))
+*/
+ console.log(2**2,2**3,2**4)
+ //4 , 8 ,16
+```
+
 
 <h2 id="es5Aarray">ES5中新增的Array方法详细说明</h2>
 
@@ -105,6 +145,212 @@ arr.map((item) => {
 personList = personList.filter((item) => {
 	return item.level < 9
 })
+```
+
+<h2 id="es8">ES8的新方法</h2>
+
+1.**Object.entries()**
+
+```javascript
+const myObject = {
+  a: 1,
+  b: 'Two',
+  c: [3,3,3]
+}
+
+const entries = Object.entries(myObject);
+/*
+[
+  [ 'a', 1 ],
+  [ 'b', 'Two' ],
+  [ 'c', [3,3,3] ]
+]
+*/
+```
+
+2.**Object.values()**
+
+```javascript
+const myObject = {
+  a: 1,
+  b: 'Two',
+  c: [3,3,3]
+}
+
+const values = Object.values(myObject);
+// [ 1, 'Two', [3,3,3] ]
+```
+
+3.**padStart() and padEnd() 填充字符串达到当前长度**
+
+```javascript
+	'abc'.padStart(4,'-').padEnd(7, '***')
+	/*
+		-abc***
+	*/
+```
+
+4.**Object.getOwnPropertyDescriptors()返回一个对象的所有自身属性的描述符**
+
+```
+ value
+ 该属性的值(仅针对数据属性描述符有效)
+ writable
+ 当且仅当属性的值可以被改变时为true。(仅针对数据属性描述有效)
+ get
+ 获取该属性的访问器函数（getter）。如果没有访问器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)
+ set
+ 获取该属性的设置器函数（setter）。 如果没有设置器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)
+ configurable
+ 当且仅当指定对象的属性描述可以被改变或者属性可被删除时，为true。
+ enumerable
+ 当且仅当指定对象的属性可以被枚举出时，为 true。
+```
+
+```javascript
+var o, d;
+
+o = { get foo() { return 17; } };
+d = Object.getOwnPropertyDescriptor(o, "foo");
+// d {
+//   configurable: true,
+//   enumerable: true,
+//   get: /*the getter function*/,
+//   set: undefined
+// }
+
+o = { bar: 42 };
+d = Object.getOwnPropertyDescriptor(o, "bar");
+// d {
+//   configurable: true,
+//   enumerable: true,
+//   value: 42,
+//   writable: true
+// }
+
+o = {};
+Object.defineProperty(o, "baz", {
+  value: 8675309,
+  writable: false,
+  enumerable: false
+});
+d = Object.getOwnPropertyDescriptor(o, "baz");
+// d {
+//   value: 8675309,
+//   writable: false,
+//   enumerable: false,
+//   configurable: false
+// }
+```
+
+<h2 id="es9">ES9有使用过的新方法</h2>
+
+1.**Promise.finally()**
+
+- 一个Promise调用链要么成功到达最后一个.then()，要么失败触发.catch()。在某些情况下，你想要在无论Promise运行成功还是失败，运行相同的代码，例如清除，删除对话，关闭数据库连接等。
+
+```javascript
+function doSomething() {
+  doSomething1()
+  .then(doSomething2)
+  .then(doSomething3)
+  .catch(err => {
+    console.log(err);
+  })
+  .finally(() => {
+    // finish here!
+  });
+}
+```
+2.**Rest/Spread 属性**
+
+- ES2018为对象解构提供了和数组一样的Rest参数（）和展开操作符
+
+```javascript
+// 第一种
+restParam({
+  a: 1,
+  b: 2,
+  c: 3
+});
+
+function restParam({ a, ...x }) {
+  // a = 1
+  // x = { b: 2, c: 3 }
+}
+
+// 第二种
+const obj1 = { a: 1, b: 2, c: 3 };
+const obj2 = { ...obj1, z: 26 };
+// obj2 is { a: 1, b: 2, c: 3, z: 26 }
+```
+
+3.**正则表达式命名捕获组（Regular Expression Named Capture Groups）**
+
+- JavaScript正则表达式可以返回一个匹配的对象——一个包含匹配字符串的类数组，例如：以YYYY-MM-DD的格式解析日期：
+
+```javascript
+// ago
+const
+  reDate = /([0-9]{4})-([0-9]{2})-([0-9]{2})/,
+  match  = reDate.exec('2018-04-30'),
+  year   = match[1], // 2018
+  month  = match[2], // 04
+  day    = match[3]; // 30
+
+// now
+const
+  reDate = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/,
+  match  = reDate.exec('2018-04-30'),
+  year   = match.groups.year,  // 2018
+  month  = match.groups.month, // 04
+  day    = match.groups.day;   // 30
+
+/*
+exec() 方法用于检索字符串中的正则表达式的匹配。
+语法
+	RegExpObject.exec(string)
+	string	必需。要检索的字符串。
+返回值
+	返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+*/
+```
+<h2 id="es10">ES10的新方法</h2>
+
+1.**Array #{flat, flatMap}**
+
+```javascript
+const array = [1, [2, [3]]];
+array.flat();
+// [1, 2, [3]]
+
+// Flatten recursively until the array contains no more nested arrays:
+array.flat(Infinity);
+// [1, 2, 3]
+```
+
+2.**String#{trimStart,trimEnd}**
+
+```javascript
+const string = '  hello world  ';
+string.trimStart();
+// → 'hello world  '
+string.trimEnd();
+// → '  hello world'
+string.trim();
+// → 'hello world'
+
+```
+
+3.**Object.fromEntries把键值对变成对象，只支持火狐**
+
+```javascript
+const arr = Object.entries({ name: 'axuebin', age: 27 });
+console.log(arr); // ["name", "axuebin"], ["age', 27]]
+
+const obj = Object.fromEntries(arr);
+console.log(obj); // { name: 'axuebin', age: 27 }
+
 ```
 
 <h2 id="string">string字符串</h2>
@@ -216,38 +462,7 @@ str.replace(/\s/g,'') // 全局匹配删除空格
 	console.log(reverse1,reverse2)//dlroWolleh;
 ```
 
-4.**es7的两个新功能**
-```javascript
-//功能一：Array.prototype.includes() 确定一个元素是否在数组中存在，返回布尔值
-const life = ['mon','dad','brother','sister']
-console.log(life.includes('mon'))//true
-console.log(life.includes('boyfirend'))//false
-/*
-	深入标准：Array.prototype.includes ( searchElement [ , fromIndex ] )
-	1、searchElement —— 要查找的元素。
-		(1)搜索按升序进行
-			Array(10000000).concat(4).includes(4)  true # [Time] 500 miliseconds 耗时 500ms
-			[4].concat(Array(10000000)).includes(4) true # [Time] 90 miliseconds 耗时 90ms
-		(2) 在任何位置找到都会返回 true，否则返回 false
-		(3) 将数组中缺失的元素视为 undefined
-			[1, , 3].indexOf(undefined) -1
-			[1, , 3].includes(undefined) true
-	*/
-		
-	//2、fromIndex （可选的） — 开始查询的起始索引。默认值为0，意味整个数组都会被搜索
-	//当 fromIndex 大于数组长度时，.includes() 立即返回 false。
-	console.log(life.includes('mon',10))
-	// 如果为负数，则被用作偏移
-	console.log(life.includes('sister',-3))
-/*
-功能二：指数运算符
- x ** y (aka Math.pow(x,y))
-*/
- console.log(2**2,2**3,2**4)
- //4 , 8 ,16
-```
-
-5.**数组求最大，最小值**
+4.**数组求最大，最小值**
 ```javascript
 const arr = [54,65,43,21,12,66,45,58,97,24]
     
@@ -282,7 +497,7 @@ arr3Max = arr3[0]
 arr3Min = arr3[arr3.length-1]
 ```
 
-6.**拓展运算符的使用**
+5.**拓展运算符的使用**
 - 原理：
 ```javascript
 const child1 = [
@@ -349,7 +564,7 @@ const router = new Router({
 ```
 - 这样是不是既美观，又方便维护叻？
 
-7.**剩余运算符的使用**
+6.**剩余运算符的使用**
 ```javascript
 let a = [1,2,3];
 let [b, ...c] = a;
@@ -382,7 +597,7 @@ console.log(name); // 'zhangsan'
 console.log(others); // {age: 30, city: 'shenzhen'}
 ```
 
-8.**Json对象数组按对象属性的排序**
+7.**Json对象数组按对象属性的排序**
 ```javascript
 const datalist = [
    {id:2,name:'老二'},
@@ -397,7 +612,7 @@ function sortId(a,b) {
 datalist.sort(sortId)
 ```
 
-9.**JS判断值是否是数字**
+8.**JS判断值是否是数字**
 - 需求：将从后台请求回来的value，value.toFixed(2)保留小数点后两位
 - 初步实现： 
 ```javascript
@@ -414,7 +629,7 @@ datalist.sort(sortId)
 ```
 - 延伸想总结一下js判断值是否是数字，详情见11.js判断值是否是数字.html
 
-10.**多条件判断简洁写法**
+9.**多条件判断简洁写法**
 - 我们来看看下面的例子：
 
 ```javascript
@@ -437,6 +652,12 @@ function test(fruit) {
   }
 ```
 
+10.**根据两个数组对象中某个值匹配**
+```javascript
+const a = [{id: '01'}, {id: '02'}, {id: ''}, {id: '04'}]
+const b = [{id: '01', form: '123'}, {id:'02', form: '321'}, {id: '03', form: '3'}, {id: '04', form: '111'}]
+a = a.map(aItem => ({...aItem, ...b.find(bItem => bItem.id === aItem.id)}))
+```
 
 <h2 id="function">原生JavaScript实现的功能demo</h2>
 

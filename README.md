@@ -62,6 +62,7 @@ arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
 ```
 <h2 id="es7">ES7中2个新增的方法</h2>
 1.**includes**
+
 ```javascript
 //功能一：Array.prototype.includes() 确定一个元素是否在数组中存在，返回布尔值
 const life = ['mon','dad','brother','sister']
@@ -650,6 +651,24 @@ function test(fruit) {
   if (redFruits.includes(fruit)) {
     console.log('red');
   }
+```
+
+```javascript
+	// 拓展应用
+	const filtersArray = ['ver', 'sit', 'localhost', 'uat', 'eco']
+	/*
+	for (let i = 0; i < filtersArray.length; i++) {
+		if (process.env.API_URL.includes(filtersArray[i])) {
+			this.oldMyKpi = 'http://mipuatv2.midea.com'
+			break
+		} else {
+			this.oldMyKpi = 'http://mip.midea.com'
+		}
+	}
+	*/
+	filtersArray.some((_) => { return process.env.API_URL.includes(_) })
+	? this.oldMyKpi = 'http://mipuatv2.midea.com'
+	: this.oldMyKpi = 'http://mip.midea.com'
 ```
 
 10.**根据两个数组对象中某个值匹配**

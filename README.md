@@ -699,6 +699,24 @@ const b = [{id: '01', form: '123'}, {id:'02', form: '321'}, {id: '03', form: '3'
 a = a.map(aItem => ({...aItem, ...b.find(bItem => bItem.id === aItem.id)}))
 ```
 
+11.**arr.map(parseInt)的坑**
+
+```javascript
+// 栗子：
+arr = ['1', '2', '3']
+arr.map(Number) //  [1,2,3]
+// 但是
+arr.map(parseInt) // [1,NaN,NaN]
+/*
+ 因为 parseInt(string, radix); radix进制数值系统
+ 这里错把数组的index,当做parseInt第二个参数，如下：
+*/
+parseInt('2', '1') //NaN
+parseInt('3', '2') //NaN 2进制没有3
+
+```
+
+
 <h2 id="function">原生JavaScript实现的功能demo</h2>
 
 1.**吸顶效果** <br />

@@ -4,7 +4,7 @@
 ### 目录
 
 - <a href="#array">数组的定义及基础操作</a>
-- <a href="#es5Aarray">ES5中新增的Array方法详细说明</a>
+- <a href="https://github.com/boa182/JavaScriptBasic/tree/master/array">ES5中新增的Array方法详细说明</a>
 - <a href="#es7">ES7中2个新增的方法</a>
 - <a href="#es8">ES8的新方法</a>
 - <a href="#es9">ES9有使用过的新方法</a>

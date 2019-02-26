@@ -1,7 +1,7 @@
 <h2 id="es5Aarray">Array</h2>
 
 <h3>基础</h3>
-* 数组：一系列数据的集合
+- 数组：一系列数据的集合
 
 一.**创建方式**
 
@@ -28,6 +28,7 @@
 	arr[3] = 'web前端';
 	console.log(arr[3])//['html5','css3','javascript','web前端']
 ```
+
 2.**加、删、改**
 - 加
 ```javascript

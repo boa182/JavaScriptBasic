@@ -1,6 +1,7 @@
 <h2 id="es5Aarray">Array</h2>
 
 <h3>基础</h3>
+
 - 数组：一系列数据的集合
 
 一.**创建方式**
@@ -51,7 +52,9 @@ arr.splice(start从哪里开始,deleteNum删除多少个,items什么项目)
 ```
 
 <h3>Array方法详解</h3>
+
 1.**forEach()**
+
 - 遍历所有元素，for循环没有太大差别，比for循环方便，但是不能随意退出循环。
 
 ```javascript

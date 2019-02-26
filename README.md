@@ -340,15 +340,24 @@ exec() 方法用于检索字符串中的正则表达式的匹配。
 <h2 id="es10">ES10的新方法</h2>
 
 1.**Array #{flat, flatMap}**
+- flat() 扁平化嵌套数组，方法会递归到指定深度将所有子数组连接，并返回一个新数组。
+* depth 可选。指定嵌套数组中的结构深度，默认值为1。
 
 ```javascript
 const array = [1, [2, [3]]];
 array.flat();
 // [1, 2, [3]]
 
-// Flatten recursively until the array contains no more nested arrays:
 array.flat(Infinity);
 // [1, 2, 3]
+```
+
+* flat()方法会移除数组中的空项:
+
+```js
+var arr4 = [1, 2, , 4, 5];
+arr4.flat();
+// [1, 2, 4, 5]
 ```
 
 2.**String#{trimStart,trimEnd}**

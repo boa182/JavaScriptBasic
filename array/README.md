@@ -143,3 +143,25 @@ var r = arr.filter(function (element, index, self) {
 
 //去除重复元素依靠的是indexOf总是返回第一个元素的位置，后续的重复元素位置与indexOf返回的位置不相等，因此被filter滤掉了。
 ```
+
+5.**some()**
+
+- 有一项返回true，则整体为true
+
+```javascript
+	// 应用
+	const filtersArray = ['ver', 'sit', 'localhost', 'uat', 'eco']
+	/*
+	for (let i = 0; i < filtersArray.length; i++) {
+		if (process.env.API_URL.includes(filtersArray[i])) {
+			this.oldMyKpi = 'http://mipuatv2.midea.com'
+			break
+		} else {
+			this.oldMyKpi = 'http://mip.midea.com'
+		}
+	}
+	*/
+	filtersArray.some((_) => { return process.env.API_URL.includes(_) })
+	? this.oldMyKpi = 'http://mipuatv2.midea.com'
+	: this.oldMyKpi = 'http://mip.midea.com'
+```

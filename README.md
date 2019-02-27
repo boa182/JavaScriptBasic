@@ -4,6 +4,7 @@
 ### 目录
 
 - <a href="https://github.com/boa182/JavaScriptBasic/tree/master/array">Array</a>
+- <a href="">Object</a>
 - <a href="#es7">ES7中2个新增的方法</a>
 - <a href="#es8">ES8的新方法</a>
 - <a href="#es9">ES9有使用过的新方法</a>
@@ -562,24 +563,6 @@ function test(fruit) {
   if (redFruits.includes(fruit)) {
     console.log('red');
   }
-```
-
-```javascript
-	// 拓展应用
-	const filtersArray = ['ver', 'sit', 'localhost', 'uat', 'eco']
-	/*
-	for (let i = 0; i < filtersArray.length; i++) {
-		if (process.env.API_URL.includes(filtersArray[i])) {
-			this.oldMyKpi = 'http://mipuatv2.midea.com'
-			break
-		} else {
-			this.oldMyKpi = 'http://mip.midea.com'
-		}
-	}
-	*/
-	filtersArray.some((_) => { return process.env.API_URL.includes(_) })
-	? this.oldMyKpi = 'http://mipuatv2.midea.com'
-	: this.oldMyKpi = 'http://mip.midea.com'
 ```
 
 10.**根据两个数组对象中某个值匹配**

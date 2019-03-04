@@ -5,6 +5,7 @@
 
 - <a href="https://github.com/boa182/JavaScriptBasic/tree/master/array">Array</a>
 - <a href="https://github.com/boa182/JavaScriptBasic/tree/master/Object">Object</a>
+- <a href="https://github.com/boa182/JavaScriptBasic/tree/master/RegExp">RegExp</a>
 - <a href="#es7">ES7中2个新增的方法</a>
 - <a href="#es8">ES8的新方法</a>
 - <a href="#es9">ES9有使用过的新方法</a>
